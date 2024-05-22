@@ -1,0 +1,11 @@
+name: Kaitolobby
+version: '${project.version}'
+main: de.kaitokid1513.lobby.main
+api-version: '1.20'
+commands:
+  build:
+
+  setspawn:
+
+  spawn:
+
