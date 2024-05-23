@@ -31,7 +31,10 @@ public class interact implements Listener {
                 e.getMaterial().equals(Material.COMPASS)) {
             Bukkit.dispatchCommand(p,"warp");
         }
-
+        if ((((e.getAction() == Action.RIGHT_CLICK_AIR) ? 1 : 0) | ((e.getAction() == Action.RIGHT_CLICK_BLOCK) ? 1 : 0)) != 0 &&
+                e.getItem().getItemMeta().getDisplayName().equals("§4A§6R§eC§2A§1D§9E§d!")) {
+            Bukkit.dispatchCommand(p,"pocket");
+        }
 
     }
 

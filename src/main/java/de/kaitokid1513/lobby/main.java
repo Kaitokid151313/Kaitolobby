@@ -13,11 +13,13 @@ import util.Createsocialfile;
 import java.util.HashMap;
 
 public final class main extends JavaPlugin implements Listener {
+    //TODO Shift rechts klick eins gegen eins prügeln mit stick und stick im normalen inv um Anfragen auszuschalten/settings
+    //TODO Cosmetics
+    //TODO DROP EVENT DISABLE
+    //TODO Auto fly enable mit Settings
 
 
-
-
-    public static String prefix = "§7[§bCreatorwave§7] ";
+    public static String prefix = "§7[§bCreatorWave§7] ";
     public static HashMap<Player, Boolean> build = new HashMap<>();
 
 

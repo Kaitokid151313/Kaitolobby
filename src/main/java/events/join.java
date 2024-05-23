@@ -1,6 +1,7 @@
 package events;
 
 import de.kaitokid1513.lobby.main;
+import me.arcaniax.hdb.api.HeadDatabaseAPI;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -65,6 +66,15 @@ public class join implements Listener {
         meta.setDisplayName("§5Creatorporter");
         Kompass.setItemMeta(meta);
         p.getInventory().setItem(0, Kompass);
+
+
+
+        HeadDatabaseAPI api = new HeadDatabaseAPI();
+        ItemStack pocket = api.getItemHead("45830");
+        ItemMeta pmeta = pocket.getItemMeta();
+        pmeta.setDisplayName("§4A§6R§eC§2A§1D§9E§d!");
+        pocket.setItemMeta(pmeta);
+        p.getInventory().setItem(8, pocket);
     }
 
 

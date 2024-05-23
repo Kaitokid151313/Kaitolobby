@@ -28,7 +28,7 @@ public class inventoryclick implements Listener {
         Player p = (Player) e.getWhoClicked();
         if(e.getView().getTitle().equalsIgnoreCase("§bWarpmenü")) {
             e.setCancelled(true);
-            ItemStack glass = new ItemStack(Material.GRAY_STAINED_GLASS);
+            ItemStack glass = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
             ItemMeta meta = glass.getItemMeta();
             meta.setDisplayName("");
             glass.setItemMeta(meta);
