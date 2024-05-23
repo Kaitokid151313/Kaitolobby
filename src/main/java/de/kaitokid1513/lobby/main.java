@@ -1,16 +1,21 @@
 package de.kaitokid1513.lobby;
 
-import commands.setspawn;
-import commands.spawn;
-import commands.build;
+import commands.*;
 import events.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+import teleporterfunction.delwarp;
+import teleporterfunction.setwarp;
+import teleporterfunction.warp;
+import util.Createsocialfile;
 
 import java.util.HashMap;
 
 public final class main extends JavaPlugin implements Listener {
+
+
+
 
     public static String prefix = "§7[§bCreatorwave§7] ";
     public static HashMap<Player, Boolean> build = new HashMap<>();
@@ -21,8 +26,8 @@ public final class main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         registercommands();
-       registerevents();
-
+        registerevents();
+        Createsocialfile.onsocial();
 
 
 
@@ -42,11 +47,19 @@ public final class main extends JavaPlugin implements Listener {
         new food(this);
         new blockplacebreak(this);
         new move(this);
+        new inventoryclick(this);
+        new interact(this);
     }
     public void registercommands() {
         getCommand("setspawn").setExecutor(new setspawn(this));
         getCommand("spawn").setExecutor(new spawn(this));
         getCommand("build").setExecutor(new build(this));
+        getCommand("setwarp").setExecutor(new setwarp(this));
+        getCommand("warp").setExecutor(new warp(this));
+        getCommand("delwarp").setExecutor(new delwarp(this));
+        getCommand("fly").setExecutor(new fly(this));
+        getCommand("plugins").setExecutor(new plugins(this));
+        getCommand("social").setExecutor(new social(this));
     }
 
 

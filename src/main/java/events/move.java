@@ -19,12 +19,16 @@ public class move implements Listener {
     public void onMove(PlayerMoveEvent e){
         Player p = e.getPlayer();
 
-        if(!main.build.get(p)) {
-            if(p.getLocation().getY() < 30) {
-                if(Loc.spawn() != null) {
-                    p.teleport(Loc.spawn());
+        if(main.build.containsKey(p)) {
+            if(!main.build.get(p)) {
+                if(p.getLocation().getY() < 30) {
+                    if(Loc.spawn() != null) {
+                        p.teleport(Loc.spawn());
+                    }
                 }
             }
+        } else {
+            main.build.put(p, false);
         }
 
 

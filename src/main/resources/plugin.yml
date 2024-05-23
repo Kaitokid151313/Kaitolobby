@@ -9,3 +9,15 @@ commands:
 
   spawn:
 
+  setwarp:
+
+  warp:
+
+  delwarp:
+
+  fly:
+
+  plugins:
+    aliases: [pl]
+
+  social:

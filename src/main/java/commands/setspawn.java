@@ -37,10 +37,10 @@ public class setspawn implements CommandExecutor {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                p.sendMessage("§bSpawn wurde gesetzt!");
+                p.sendMessage(main.prefix +"§bSpawn wurde gesetzt!");
 
             } else {
-                p.sendMessage("/setspawn");
+                p.sendMessage(main.prefix +"/setspawn");
             }
 
 
@@ -48,7 +48,7 @@ public class setspawn implements CommandExecutor {
 
 
         } else {
-            p.sendMessage("§cYou don't have permission to use this command!");
+            p.sendMessage(main.prefix +"§cYou don't have permission to use this command!");
         }
 
 
