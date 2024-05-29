@@ -4,6 +4,7 @@ import de.kaitokid1513.lobby.main;
 import me.arcaniax.hdb.api.HeadDatabaseAPI;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,6 +13,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import util.Loc;
+import util.createprofilefile;
+
+import java.io.File;
+import java.io.IOException;
 
 public class join implements Listener {
     private final main plugin;
@@ -24,7 +29,7 @@ public class join implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
-        e.setJoinMessage(main.prefix + "§eWillkommen " + p.getDisplayName() + " §e!");
+
 
         if(Loc.spawn() !=null) {
             Joinrun(p,Loc.spawn());
@@ -38,6 +43,10 @@ public class join implements Listener {
 
         Pinvclearandreset(p);
 
+        createprofilefile.profilecreate(p);
+        onflytest(p);
+
+        e.setJoinMessage(main.prefix + "§eWillkommen §b" + p.getDisplayName() + "§e!");
     }
 
 
@@ -77,7 +86,23 @@ public class join implements Listener {
         p.getInventory().setItem(8, pocket);
     }
 
+    public void onflytest(Player p) {
+        File pfile = new File("plugins/Kaitolobby/profiles",p.getUniqueId()+".yml");
+        YamlConfiguration pcfg = YamlConfiguration.loadConfiguration(pfile);
+        if(!p.hasPermission("lobby.fly")) {
+           if(pcfg.get("Settings.autofly").equals("true")) {
+               pcfg.set("Settings.autofly", false);
+               try {
+                   pcfg.save(pfile);
+               } catch (IOException e) {
+                   throw new RuntimeException(e);
+               }
+           }
 
+
+
+        }
+    }
 
 
 

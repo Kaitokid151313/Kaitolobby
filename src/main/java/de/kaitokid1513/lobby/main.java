@@ -15,7 +15,6 @@ import java.util.HashMap;
 public final class main extends JavaPlugin implements Listener {
     //TODO Shift rechts klick eins gegen eins prügeln mit stick und stick im normalen inv um Anfragen auszuschalten/settings
     //TODO Cosmetics
-    //TODO DROP EVENT DISABLE
     //TODO Auto fly enable mit Settings
 
 
@@ -51,6 +50,7 @@ public final class main extends JavaPlugin implements Listener {
         new move(this);
         new inventoryclick(this);
         new interact(this);
+        new dropev(this);
     }
     public void registercommands() {
         getCommand("setspawn").setExecutor(new setspawn(this));
@@ -62,6 +62,7 @@ public final class main extends JavaPlugin implements Listener {
         getCommand("fly").setExecutor(new fly(this));
         getCommand("plugins").setExecutor(new plugins(this));
         getCommand("social").setExecutor(new social(this));
+        getCommand("settings").setExecutor(new settings(this));
     }
 
 

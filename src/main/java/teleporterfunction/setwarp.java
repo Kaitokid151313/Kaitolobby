@@ -29,7 +29,7 @@ public class setwarp implements CommandExecutor {
                 YamlConfiguration cfg = YamlConfiguration.loadConfiguration(tpfile);
                 if(tpfile.exists()) {
                     if(!cfg.contains("Warps." + args[0])) {
-                        if(!cfg.contains("Nummer."+args[1])) {
+                        if(!cfg.contains("Nummer."+args[1]) && args[1] != "26") {
                             cfg.set("Warps." + args[0] + ".world", p.getWorld().getName());
                             cfg.set("Warps." + args[0] + ".x", p.getLocation().getBlockX());
                             cfg.set("Warps." + args[0] + ".y", p.getLocation().getBlockY());

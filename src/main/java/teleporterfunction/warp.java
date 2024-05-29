@@ -37,7 +37,7 @@ public class warp implements CommandExecutor {
                 for(i=0; i<27; i++) {
                     ItemStack glass = new ItemStack(Material.GRAY_STAINED_GLASS);
                     ItemMeta meta = glass.getItemMeta();
-                    meta.setDisplayName("");
+                    meta.setDisplayName(" ");
                     glass.setItemMeta(meta);
 
                     tpinv.setItem(i,glass);
@@ -54,8 +54,11 @@ public class warp implements CommandExecutor {
                     tpinv.setItem(cfg.getInt("Warps." + warp + ".Platziminv"),item);
 
                 }
-
-
+                ItemStack jump = new ItemStack(Material.GOLD_BLOCK);
+                ItemMeta jumpItemMeta = jump.getItemMeta();
+                jumpItemMeta.setDisplayName("§eJumpAndRun");
+                jump.setItemMeta(jumpItemMeta);
+                tpinv.setItem(26,jump);
 
                 p.openInventory(tpinv);
 
