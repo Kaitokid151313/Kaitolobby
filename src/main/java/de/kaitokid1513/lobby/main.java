@@ -20,7 +20,7 @@ public final class main extends JavaPlugin implements Listener {
 
     public static String prefix = "§7[§bCreatorWave§7] ";
     public static HashMap<Player, Boolean> build = new HashMap<>();
-
+    public static HashMap<Player, Boolean> lobbyjnr = new HashMap<>();
 
 
 
@@ -62,7 +62,7 @@ public final class main extends JavaPlugin implements Listener {
         getCommand("fly").setExecutor(new fly(this));
         getCommand("plugins").setExecutor(new plugins(this));
         getCommand("social").setExecutor(new social(this));
-        getCommand("settings").setExecutor(new settings(this));
+       // getCommand("settings").setExecutor(new settings(this));
     }
 
 

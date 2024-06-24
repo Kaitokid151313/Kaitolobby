@@ -27,11 +27,13 @@ public class settings implements CommandExecutor {
         for (i = 0; i < 27; i++) {
             ItemStack glass = new ItemStack(Material.GRAY_STAINED_GLASS);
             ItemMeta meta = glass.getItemMeta();
-            meta.setDisplayName(" ");
+            meta.setDisplayName("");
             glass.setItemMeta(meta);
 
             inv.setItem(i,glass);
         }
+
+
 
 
 

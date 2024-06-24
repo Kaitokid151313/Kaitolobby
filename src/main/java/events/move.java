@@ -1,5 +1,6 @@
 package events;
 
+import Commands.LobbyJnR;
 import de.kaitokid1513.lobby.main;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -30,7 +31,22 @@ public class move implements Listener {
         } else {
             main.build.put(p, false);
         }
+        if(main.lobbyjnr.containsKey(p)) {
+            if(main.lobbyjnr.get(p) == true) {
+                if(Utils.infoapi.infoobjnron(p) == false) {
+                    main.lobbyjnr.put(p, false);
+                    join.Pinvclearandreset(p);
+                }
 
+
+
+            }
+
+
+
+        } else {
+            main.lobbyjnr.put(p, false);
+        }
 
 
 

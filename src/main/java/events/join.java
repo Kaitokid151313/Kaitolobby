@@ -39,7 +39,7 @@ public class join implements Listener {
         p.setFoodLevel(20);
 
         main.build.put(p, false);
-
+        main.lobbyjnr.put(p, false);
 
         Pinvclearandreset(p);
 

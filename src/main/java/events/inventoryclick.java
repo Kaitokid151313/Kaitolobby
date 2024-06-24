@@ -32,22 +32,40 @@ public class inventoryclick implements Listener {
             ItemMeta meta = glass.getItemMeta();
             meta.setDisplayName("");
             glass.setItemMeta(meta);
-            if(e.getCurrentItem() != glass) {
-                p.closeInventory();
+            if(!e.getCurrentItem().getItemMeta().getDisplayName().equals("")) {
+                ItemStack jump = new ItemStack(Material.GOLD_BLOCK);
+                ItemMeta jumpItemMeta = jump.getItemMeta();
+                jumpItemMeta.setDisplayName("§eJumpAndRun");
+                jump.setItemMeta(jumpItemMeta);
 
 
-                File tpfile = new File(plugin.getDataFolder(), "tp.yml");
-                YamlConfiguration cfg = YamlConfiguration.loadConfiguration(tpfile);
-                String name = e.getCurrentItem().getItemMeta().getLore().toString().replace("[", "").replaceAll("]","");
-                String world = cfg.getString("Warps."+ name + ".world");
-                int x = cfg.getInt("Warps."+ name + ".x");
-                int y = cfg.getInt("Warps."+ name + ".y");
-                int z = cfg.getInt("Warps."+ name + ".z");
-                double yaw = cfg.getDouble("Warps."+ name + ".yaw");
-                double pitch = cfg.getDouble("Warps."+ name + ".pitch");
-                Location loc = new Location(Bukkit.getWorld(world), x, y, z,(float) yaw,(float) pitch);
-                p.teleport(loc);
+                if(!e.getCurrentItem().getItemMeta().getDisplayName().equals("jumpItemMeta")) {
+                    p.closeInventory();
 
+
+                    File tpfile = new File(plugin.getDataFolder(), "tp.yml");
+                    YamlConfiguration cfg = YamlConfiguration.loadConfiguration(tpfile);
+                    String name = e.getCurrentItem().getItemMeta().getLore().toString().replace("[", "").replaceAll("]","");
+                    String world = cfg.getString("Warps."+ name + ".world");
+                    int x = cfg.getInt("Warps."+ name + ".x");
+                    int y = cfg.getInt("Warps."+ name + ".y");
+                    int z = cfg.getInt("Warps."+ name + ".z");
+                    double yaw = cfg.getDouble("Warps."+ name + ".yaw");
+                    double pitch = cfg.getDouble("Warps."+ name + ".pitch");
+                    Location loc = new Location(Bukkit.getWorld(world), x, y, z,(float) yaw,(float) pitch);
+                    p.teleport(loc);
+
+                } else {
+                    p.closeInventory();
+                    Bukkit.dispatchCommand(p,"lobbyjnr");
+                    p.getInventory().clear();
+                    main.lobbyjnr.put(p, true);
+
+
+
+
+
+                }
 
 
 
