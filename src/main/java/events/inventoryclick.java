@@ -54,7 +54,7 @@ public class inventoryclick implements Listener {
 
                 } else {
                     p.closeInventory();
-                    Bukkit.dispatchCommand(p,"lobbyjnr");
+                    Bukkit.dispatchCommand(p,"lobbyjnr 23egere4583gedcgefdh");
                     p.getInventory().clear();
                     main.lobbyjnr.put(p, true);
 
