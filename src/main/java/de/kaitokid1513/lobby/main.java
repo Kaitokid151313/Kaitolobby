@@ -61,7 +61,7 @@ public final class main extends JavaPlugin implements Listener {
         getCommand("warp").setExecutor(new warp(this));
         getCommand("delwarp").setExecutor(new delwarp(this));
         getCommand("fly").setExecutor(new fly(this));
-        getCommand("plugins").setExecutor(new plugins(this));
+       // getCommand("plugins").setExecutor(new plugins(this));
         getCommand("social").setExecutor(new social(this));
        // getCommand("settings").setExecutor(new settings(this));
     }
