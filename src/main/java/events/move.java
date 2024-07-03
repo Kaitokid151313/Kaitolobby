@@ -32,8 +32,8 @@ public class move implements Listener {
             main.build.put(p, false);
         }
         if(main.lobbyjnr.containsKey(p)) {
-            if(main.lobbyjnr.get(p) == true) {
-                if(Utils.infoapi.infoobjnron(p) == false) {
+            if(main.lobbyjnr.get(p)) {
+                if(!Utils.infoapi.infoobjnron(p)) {
                     main.lobbyjnr.put(p, false);
                     join.Pinvclearandreset(p);
                 }
