@@ -51,6 +51,7 @@ public final class main extends JavaPlugin implements Listener {
         new inventoryclick(this);
         new interact(this);
         new dropev(this);
+        new commandpreprocess(this);
     }
     public void registercommands() {
         getCommand("setspawn").setExecutor(new setspawn(this));

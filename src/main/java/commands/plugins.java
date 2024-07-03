@@ -15,6 +15,8 @@ public class plugins implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
+
+      /*
         Player p = (Player) commandSender;
 
         if(p.hasPermission("lobby.plugins")) {
@@ -24,7 +26,7 @@ public class plugins implements CommandExecutor {
             p.sendMessage(main.prefix + "Aber wenn du Bock hast was über unsere Arbeitsweise zu erfahren, meld dich gerne! Wir suchen immer neue Leute :)");
         }
 
-
+        */
 
 
         return true;
