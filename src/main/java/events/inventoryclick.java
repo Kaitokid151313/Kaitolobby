@@ -28,18 +28,15 @@ public class inventoryclick implements Listener {
         Player p = (Player) e.getWhoClicked();
         if(e.getView().getTitle().equalsIgnoreCase("§bWarpmenü")) {
             e.setCancelled(true);
-            ItemStack glass = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
-            ItemMeta meta = glass.getItemMeta();
-            meta.setDisplayName("");
-            glass.setItemMeta(meta);
-            if(!e.getCurrentItem().getItemMeta().getDisplayName().equals("")) {
-                ItemStack jump = new ItemStack(Material.GOLD_BLOCK);
-                ItemMeta jumpItemMeta = jump.getItemMeta();
-                jumpItemMeta.setDisplayName("§eJumpAndRun");
-                jump.setItemMeta(jumpItemMeta);
+
+            ArrayList<String> empty = new ArrayList<String>();
+            empty.add(" ");
+            if(!e.getCurrentItem().getItemMeta().getLore().equals(empty)) {
+                ArrayList<String> jlore = new ArrayList<String>();
+                jlore.add("JumpAndRun");
 
 
-                if(!e.getCurrentItem().getItemMeta().getDisplayName().equals("jumpItemMeta")) {
+                if(!e.getCurrentItem().getItemMeta().getLore().equals(jlore)) {
                     p.closeInventory();
 
 
