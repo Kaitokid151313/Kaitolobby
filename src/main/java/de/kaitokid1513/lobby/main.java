@@ -18,7 +18,7 @@ public final class main extends JavaPlugin implements Listener {
     //TODO Auto fly enable mit Settings
 
 
-    public static String prefix = "§7[§bCreatorWave§7] ";
+    public static String prefix = "§7[§bMineDynasty§7] ";
     public static HashMap<Player, Boolean> build = new HashMap<>();
     public static HashMap<Player, Boolean> lobbyjnr = new HashMap<>();
 
